@@ -30,6 +30,9 @@ Works with **Claude Code**, **Codex**, **Claude Desktop**, **Cursor**, **VS Code
 | Variable | Where to find |
 | -------- | ------------- |
 | `TYPEBOT_API_KEY` | Typebot dashboard → Settings & Members → My account → API tokens → Create |
+| `TYPEBOT_BASE_URL` | *(Optional)* Your self-hosted instance URL (e.g. `https://bot.example.com`) |
+
+> **Self-hosted?** Set `TYPEBOT_BASE_URL` to your instance URL. If not set, defaults to Typebot Cloud.
 
 ## Installation
 
@@ -48,8 +51,11 @@ Three installation scopes are available:
 ```bash
 claude mcp add typebot -s user \
   -e TYPEBOT_API_KEY=your-key \
+  -e TYPEBOT_BASE_URL=https://bot.example.com \
   -- npx -y github:pauloFroes/mcp-typebot
 ```
+
+> Omit `TYPEBOT_BASE_URL` if using Typebot Cloud.
 
 > Replace `-s user` with `-s local` or `-s project` as needed.
 
